@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Single Recipe || Final</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <!-- normalize -->
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <!-- main css -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <!-- nav  -->
+    <nav class="navbar">
+      <div class="nav-center">
+        <div class="nav-header">
+          <a href="index.html" class="nav-logo">
+            <img src="./assets/logo.png" />
+          </a>
+          <button class="nav-btn btn">
+            <i class="fas fa-align-justify"></i>
+          </button>
+        </div>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link"> Home </a>
+          <a href="recipes.html" class="nav-link"> Receitas </a>
+
+          <div class="nav-link contact-link">
+            <div id="user-container" class="user-info d-flex align-items-center mb-4">
+              <p id="user-name" class="mr-3"></p>
+              <img id="user-photo" src="images/default-user.png" alt="User Photo" class="rounded-circle mr-3" width="100" height="100">
+              <button id="logout-button" class="btn btn-danger">Logout</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- end of nav -->
+    <main class="page">
+      <div class="recipe-page">
+        <section class="recipe-hero">
+          <img
+            class="img recipe-hero-img"
+            id="recipe-image"
+          />
+          <article class="recipe-info">
+            <h2 id="recipe-title">Banana Pancakes</h2>
+            <p id="recipe-description">
+            </p>
+            <div class="recipe-icons">
+              <article>
+                <i class="far fa-clock"></i>
+                <h5>Tempo de Preparo</h5>
+                <p id="cook-time"></p>
+              </article>
+              <article>
+                <i class="fas fa-level-up-alt"></i>
+                <h5>Dificuldade</h5>
+                <p id="difficulty"></p>
+              </article>
+              <article>
+                <i class="fas fa-euro-sign"></i>
+                <h5>Custo</h5>
+                <p id="cost"></p>
+              </article>
+            </div>
+          </article>
+        </section>
+        <!-- content -->
+        <section class="recipe-content">
+          <article>
+            <h4 id="ingredients"></h4>
+          </article>
+          <article class="second-column">
+            <div>
+              <h4 id="autor">ingredients</h4>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+    <!-- footer -->
+    <footer class="page-footer">
+      <p>
+      </p>
+    </footer>
+    <script type="module" src="script/recipedetail.js"></script>
+  </body>
+</html>

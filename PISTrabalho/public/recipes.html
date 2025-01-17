@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe List</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- nav  -->
+    <nav class="navbar">
+        <div class="nav-center">
+          <div class="nav-header">
+            <a href="index.html" class="nav-logo">
+              <img src="./assets/logo.png" alt="simply recipes" />
+            </a>
+            <button class="nav-btn btn">
+              <i class="fas fa-align-justify"></i>
+            </button>
+          </div>
+          <div class="nav-links">
+            <a href="index.html" class="nav-link"> home </a>
+            <a href="recipes.html" class="nav-link"> receitas </a>
+            <div class="nav-link contact-link">
+              <div id="user-container" class="user-info d-flex align-items-center mb-4">
+                <p id="user-name" class="mr-3"></p>
+                <img id="user-photo" src="images/default-user.png" alt="User Photo" class="rounded-circle mr-3" width="100" height="100">
+                <button id="logout-button" class="btn btn-danger">Logout</button>
+            </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <main class="page">
+        <!-- header -->
+        <header class="hero">
+          <div class="hero-container">
+            <div class="hero-text">
+              <h1>Receita</h1>
+            </div>
+          </div>
+        </header>
+        <div class="content-header">
+            <button class="add-recipe-btn" id="open-modal-btn">Adicionar Receita</button>
+        </div>
+        <div id="recipes" class="recipes-list">
+                
+                <!-- Existing recipe elements will be dynamically inserted here -->
+        </div>
+
+ <!-- Modal Create-->
+ <div id="add-recipe-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" id="close-modal-btn">&times;</span>
+        <h2>Adicionar</h2>
+        <form id="add-recipe-form" action="/api/recipes" method="POST">
+            <div class="form-group">
+                <label for="titulo">Title:</label>
+                <input type="text" id="titulo" name="titulo" required>
+            </div>
+            <div class="form-group">
+                <label for="autor">Autor:</label>
+                <input type="text" id="autor" name="autor" required disabled>
+            </div>
+            <div class="form-group">
+                <label for="descricao">Descricao:</label>
+                <textarea id="descricao" name="descricao" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="dificuldade">Dificuldade:</label>
+                <select id="dificuldade" name="dificuldade" required>
+                    <option value="Facil">Fácil</option>
+                    <option value="Medio">Médio</option>
+                    <option value="Dificil">Difícil</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="categoria">Categoria:</label>
+                <select id="categoria" name="categoria" required>
+                    <option value="Entrada">Entrada</option>
+                    <option value="Prato Principal">Prato Principal</option>
+                    <option value="Sobremesa">Sobremesa</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tempo">Tempo de Preparo:</label>
+                <input placeholder="HH:MM:SS" type="text" id="tempo" name="tempo" required>
+            </div>
+            <div class="form-group">
+                <label for="custo">Cost:</label>
+                <input type="text" id="custo" name="custo" required>
+            </div>
+            <div class="form-group">
+                <label for="imagem">Upload Image:</label>
+                <input type="file" id="imagem" name="imagem" accept="image/*">
+            </div>
+            <button class="modal-button"type="submit">Adicionar Receita</button>
+        </form>
+    </div>
+</div>
+<!-- Modal Update-->
+<div id="update-recipe-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" id="close-update-modal-btn">&times;</span>
+        <h2>Update Receita</h2>
+        <form id="update-recipe-form">
+            <div class="form-group">
+                <label for="update-titulo">Titulo:</label>
+                <input type="text" id="update-titulo" name="titulo" required>
+            </div>
+            <div class="form-group">
+                <label for="update-autor">Autor:</label>
+                <input type="text" id="update-autor" name="autor" required disabled>
+            </div>
+            <div class="form-group">
+                <label for="update-descricao">Descricao:</label>
+                <textarea id="update-descricao" name="descricao" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="update-dificuldade">Dificuldade:</label>
+                <select id="update-dificuldade" name="dificuldade" required>
+                    <option value="Facil">Fácil</option>
+                    <option value="Medio">Médio</option>
+                    <option value="Dificil">Difícil</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="update-categoria">Categoria:</label>
+                <select id="update-categoria" name="categoria" required>
+                    <option value="Entrada">Entrada</option>
+                    <option value="Prato Principal">Prato Principal</option>
+                    <option value="Sobremesa">Sobremesa</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="update-tempo">Tempo de Preparo:</label>
+                <input placeholder="HH:MM:SS" type="text" id="update-tempo" name="tempo" required>
+            </div>
+            <div class="form-group">
+                <label for="update-custo">Custo:</label>
+                <input type="text" id="update-custo" name="custo" required>
+            </div>
+            <div class="form-group">
+                <label for="update-imagem">Upload Image:</label>
+                <input type="file" id="update-imagem" name="imagem" accept="image/*">
+            </div>
+            <button class="modal-button" type="submit">Update Receita</button>
+        </form>
+    </div>
+</div>
+    </main>
+<footer class="page-footer">
+    <p> </p>
+</footer>
+    <script type="module" src="script/recipes.js"></script>
+</body>
+</html>
